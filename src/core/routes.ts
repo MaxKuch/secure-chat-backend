@@ -12,12 +12,16 @@ export default (app: express.Express, io: socket.Server) => {
   const Dialog = new DialogController(io)
   const Messages = new MessagesController(io)
 
+  
+
   var corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://whispering-dawn-05999.herokuapp.com',
     credentials: true
   }
 
   app.use(cors(corsOptions), bodyParser.json(), checkAuth)
+ 
+
   app.get('/user/me', User.getMe);
   app.get('/user/find', User.find);
   app.get('/user/:id', User.show);

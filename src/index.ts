@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 import http from 'http'
 import express from 'express'
+import path from 'path'
 import "./core/db"
 import createRoutes from './core/routes'
 import createSocket from './core/socket'
@@ -14,6 +15,12 @@ const server = http.createServer(app);
 const io = createSocket(server)
 
 createRoutes(app, io)
+
+app.use(express.static(path.join(__dirname, 'build')));
+console.log(__dirname)
+app.get('/*', function (_, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 server.listen(process.env.PORT, () => {
   io.on('connection', (socket) => {

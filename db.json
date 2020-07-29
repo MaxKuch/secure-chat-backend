@@ -1,0 +1,282 @@
+{
+  "dialogs-list": [
+    {
+      "_id": "5f0db609afc3e3c0c9fe20be",
+      "user": {
+        "_id": "5f0db609ee1bfd116c511af2",
+        "fullname": "Ava Joyner",
+        "avatar": null
+      },
+      "message": {
+        "text": "aliquip et irure fugiat magna adipisicing proident eu enim et deserunt eiusmod do ex excepteur",
+        "isReaded": false,
+        "created_at": "Sun Apr 10 1994 23:41:19 GMT+0000 (UTC)",
+        "unreaded": 1
+      }
+    },
+    {
+      "_id": "5f0db60960a34ddb1aaf3811",
+      "user": {
+        "_id": "5f0db60982cda23cb8e523d0",
+        "fullname": "Lupe Mccall",
+        "avatar": null
+      },
+      "message": {
+        "text": "ex adipisicing ea velit aliqua eiusmod officia deserunt minim nostrud ut velit eiusmod voluptate elit",
+        "isReaded": true,
+        "created_at": "Sat Jun 04 1977 10:00:33 GMT+0000 (UTC)",
+        "unreaded": 4
+      }
+    },
+    {
+      "_id": "5f0db6096dc57f04631b9006",
+      "user": {
+        "_id": "5f0db6096ee265b4c82b63a8",
+        "fullname": "Massey Harmon",
+        "avatar": null
+      },
+      "message": {
+        "text": "reprehenderit pariatur anim adipisicing tempor elit id reprehenderit pariatur elit amet ullamco commodo enim excepteur",
+        "isReaded": false,
+        "created_at": "Thu Jun 03 1982 18:56:49 GMT+0000 (UTC)",
+        "unreaded": 5
+      }
+    },
+    {
+      "_id": "5f0db6091b9724ee06938468",
+      "user": {
+        "_id": "5f0db609be6767fd45198df3",
+        "fullname": "Dora Guy",
+        "avatar": null
+      },
+      "message": {
+        "text": "ad consequat irure fugiat irure occaecat eu qui commodo velit labore in aliqua ullamco amet",
+        "isReaded": false,
+        "created_at": "Sun Dec 10 1995 11:11:41 GMT+0000 (UTC)",
+        "unreaded": 4
+      }
+    },
+    {
+      "_id": "5f0db6094fd10583281c62b0",
+      "user": {
+        "_id": "5f0db609d9bc1f9c1d0f003d",
+        "fullname": "Page Orr",
+        "avatar": null
+      },
+      "message": {
+        "text": "fugiat Lorem esse esse minim cupidatat pariatur veniam culpa pariatur ipsum velit magna anim non",
+        "isReaded": true,
+        "created_at": "Sat Jul 14 1984 02:49:36 GMT+0000 (UTC)",
+        "unreaded": 5
+      }
+    }
+  ],
+  "dialogs-storage": [
+    {
+      "dialogId": "5f0db609afc3e3c0c9fe20be",
+      "messages": [
+      {
+        "user":{
+          "_id": "5redr569ee1bfd116c5t65g2",
+          "fullname": "Lupe Mccall"
+        },
+        "avatar": null,
+        "text": "labore ullamco ad sint commodo quis eu labore est officia",
+        "date": "Sun Jul 30 2000 05:16:40 GMT+0000 (UTC)",
+        "attachments": [],
+        "isMe": true,
+        "isReaded": false
+      },
+      {
+        "user":{
+          "_id": "5f0db609ee1bfd116c51erg2",
+          "fullname": "Ava Joyner"
+        },
+        "avatar": null,
+        "text": "officia cillum labore id ad labore sit nisi esse voluptate",
+        "date": "Sat Nov 23 1991 04:38:16 GMT+0000 (UTC)",
+        "attachments": [
+          {
+            "filename": "image.jpg",
+            "url": "https://source.unsplash.com/random/100x100"
+          },
+          {
+            "filename": "image.jpg",
+            "url": "https://source.unsplash.com/random/100x100"
+          }
+        ],
+        "isMe": false,
+        "isReaded": true
+      }]
+    },
+    {
+      "dialogId": "5f0db60960a34ddb1aaf3811",
+      "messages": [
+        {
+          "user":{
+            "_id": "5redr569ee1bfd116c5t65g2",
+            "fullname": "Lupe Mccall"
+          },
+          "avatar": null,
+          "text": "et dolore magna incididunt tempor anim dolore officia irure ipsum",
+          "date": "Sun Nov 21 1982 04:43:20 GMT+0000 (UTC)",
+          "attachments": [],
+          "isMe": true,
+          "isReaded": true
+        },
+        {
+          "user":{
+            "_id": "5f0dr569ee1dca116c51erg2",
+            "fullname": "Massey Harmon"
+          },
+          "avatar": null,
+          "text": "aute voluptate nostrud proident Lorem veniam amet aliquip quis ullamco",
+          "date": "Tue Apr 17 1990 11:52:15 GMT+0000 (UTC)",
+          "attachments": [
+            {
+              "filename": "image.jpg",
+              "url": "https://source.unsplash.com/random/100x100"
+            }
+          ],
+          "isMe": false,
+          "isReaded": false
+        }]
+    },
+    {
+      "dialogId": "5f0db6096dc57f04631b9006",
+      "messages": [
+        {
+          "user":{
+            "_id": "5redr569ee1bfd116c5t65g2",
+            "fullname": "Page Orr"
+          },
+          "avatar": null,
+          "text": "enim aliqua laborum nisi nostrud sunt incididunt quis Lorem ea",
+          "date": "Mon Aug 08 2016 02:06:46 GMT+0000 (UTC)",
+          "attachments": [
+            {
+              "filename": "image.jpg",
+              "url": "https://source.unsplash.com/random/100x100"
+            }
+          ],
+          "isMe": false,
+          "isReaded": true
+        },
+        {
+          "user":{
+            "_id": "5redr569ee1bfd116c5t65g2",
+            "fullname": "Lupe Mccall"
+          },
+          "avatar": null,
+          "text": "esse enim id consequat nulla anim duis enim in ut",
+          "date": "Mon Oct 30 2017 22:20:27 GMT+0000 (UTC)",
+          "attachments": [],
+          "isMe": true,
+          "isReaded": true
+        },
+        {
+          "user":{
+            "_id": "5redr569ee1bfd116c5t65g2",
+            "fullname": "Page Orr"
+          },
+          "avatar": null,
+          "text": "culpa non anim tempor ad in proident fugiat amet aliqua",
+          "date": "Sat Dec 04 1993 18:15:02 GMT+0000 (UTC)",
+          "attachments": [],
+          "isMe": false,
+          "isReaded": true
+        }]
+    },
+    {
+      "dialogId": "5f0db6091b9724ee06938468",
+      "messages": [
+        {
+          "user":{
+            "_id": "5redr569ee1bfd116c5t65g2",
+            "fullname": "Lupe Mccall"
+          },
+          "avatar": null,
+          "text": "nostrud nisi enim mollit ullamco culpa commodo cupidatat in tempor",
+          "date": "Tue Jul 19 2016 19:41:55 GMT+0000 (UTC)",
+          "attachments": [
+            {
+              "filename": "image.jpg",
+              "url": "https://source.unsplash.com/random/100x100"
+            },
+            {
+              "filename": "image.jpg",
+              "url": "https://source.unsplash.com/random/100x100"
+            }
+          ],
+          "isMe": true,
+          "isReaded": true
+        },
+        {
+          "user":{
+            "_id": "5redr569ee1bfd116c5t65g2",
+            "fullname": "Lupe Mccall"
+          },
+          "avatar": null,
+          "text": "aliqua qui in eu non consectetur velit ex officia ut",
+          "date": "Tue Apr 02 2013 16:54:20 GMT+0000 (UTC)",
+          "attachments": [
+            {
+              "filename": "image.jpg",
+              "url": "https://source.unsplash.com/random/100x100"
+            },
+            {
+              "filename": "image.jpg",
+              "url": "https://source.unsplash.com/random/100x100"
+            },
+            {
+              "filename": "image.jpg",
+              "url": "https://source.unsplash.com/random/100x100"
+            }
+          ],
+          "isMe": true,
+          "isReaded": true
+        }]
+    },
+    {
+      "dialogId": "5f0db6094fd10583281c62b0",
+      "messages": [
+        {
+          "user":{
+            "_id": "5re449ee11bfd116c5t65g2",
+            "fullname": "Massey Harmon"
+          },
+          "avatar": null,
+          "text": "in laboris quis irure ad aliqua nulla exercitation nulla aute",
+          "date": "Sat Jul 06 1974 01:57:18 GMT+0000 (UTC)",
+          "attachments": [],
+          "isMe": false,
+          "isReaded": false
+        },
+        {
+          "user":{
+            "_id": "5re4yr3h21bfd116c5t65g2",
+            "fullname":"Dora Guy"
+          },
+          "avatar": null,
+          "text": "eiusmod nisi mollit fugiat id anim ea anim nostrud duis",
+          "date": "Fri May 12 1995 12:00:14 GMT+0000 (UTC)",
+          "attachments": [
+            {
+              "filename": "image.jpg",
+              "url": "https://source.unsplash.com/random/100x100"
+            },
+            {
+              "filename": "image.jpg",
+              "url": "https://source.unsplash.com/random/100x100"
+            },
+            {
+              "filename": "image.jpg",
+              "url": "https://source.unsplash.com/random/100x100"
+            }
+          ],
+          "isMe": true,
+          "isReaded": true
+        }]
+    }
+  ]
+}

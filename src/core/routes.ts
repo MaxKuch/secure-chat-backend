@@ -1,10 +1,12 @@
 import express from 'express'
 import socket from 'socket.io'
+import dotenv from 'dotenv'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import { UserController, DialogController, MessagesController} from '../controller'
 import { checkAuth } from '../middlewares'
 import { loginValidation, registrationValidation } from '../utils/validations'
+dotenv.config()
 
 export default (app: express.Express, io: socket.Server) => {
 
@@ -15,7 +17,8 @@ export default (app: express.Express, io: socket.Server) => {
   
 
   var corsOptions = {
-    origin: 'https://whispering-dawn-05999.herokuapp.com',
+    origin: process.env.ORIGIN,
+    //origin: 'http://localhost:3000',
     credentials: true
   }
 

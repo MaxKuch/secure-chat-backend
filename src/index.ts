@@ -17,13 +17,13 @@ const io = createSocket(server)
 createRoutes(app, io)
 
 app.use(express.static(path.join(__dirname, 'build')));
-console.log(__dirname)
 app.get('/*', function (_, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 server.listen(process.env.PORT, () => {
   io.on('connection', (socket) => {
+    console.log('connected')
     const token = socket.handshake.query.token
     let user: IUser | null = null
     if(token){
@@ -56,7 +56,6 @@ server.listen(process.env.PORT, () => {
         DialogModel.findById(dialog_id).populate('lastMessage').exec((err, dialog: any) => {
           if(!err && dialog){
             if(dialog.lastMessage.user.toString() === partner_id){
-              console.log('!!!')
               dialog.unreaded = 0
               dialog.save()
             }
@@ -64,7 +63,9 @@ server.listen(process.env.PORT, () => {
         })
       })
     })
-      
+    socket.on('MESSAGE_TYPING', obj => {
+      socket.broadcast.emit('MESSAGE_TYPING', obj)
+    })
   })
   
   console.log(`Server: http://localhost:${process.env.PORT}`)

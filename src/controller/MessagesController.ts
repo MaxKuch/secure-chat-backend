@@ -20,10 +20,6 @@ class MessagesController extends Controller{
     })
   }
 
-  // getMe() {
-  //   // TODO: Сделать возврат инфы о самом себе (аутентификация)
-  // }
-
   delete = (req: express.Request, res: express.Response) => {
     const id:string = req.params.id
     MessageModel.findOneAndRemove({_id: id}, (err, message) => {

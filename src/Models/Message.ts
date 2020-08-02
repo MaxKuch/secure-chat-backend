@@ -42,7 +42,6 @@ MessageSchema.pre('save', function(this: IMessage, next) {
     if (!err && dialog){
       dialog.lastMessage= this._id
       dialog.unreaded++
-      console.log(dialog)
       dialog.save()
     }
     next();

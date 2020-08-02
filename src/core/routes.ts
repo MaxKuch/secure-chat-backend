@@ -18,7 +18,6 @@ export default (app: express.Express, io: socket.Server) => {
 
   var corsOptions = {
     origin: process.env.ORIGIN,
-    //origin: 'http://localhost:3000',
     credentials: true
   }
 

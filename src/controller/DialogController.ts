@@ -8,16 +8,19 @@ class DialogController extends Controller{
   constructor(io: socket.Server){
     super(io)
   }
+
   index(req: any, res: any){
     const userId: string | null = req.user._id
-    DialogModel.find({$or: [{author: userId}, {partner: userId}]}).populate(["author", "partner", {path: "lastMessage", populate: "user"}]).exec((err, dialogs) => {
-      if(err){
-        return res.status(404).json({
-          message: 'Dialogs not found'
-        })
-      }
-      return res.json(dialogs)
-    })
+    DialogModel.find({$or: [{author: userId}, {partner: userId}]})
+      .populate(["author", "partner", {path: "lastMessage", populate: "user"}])
+      .exec((err, dialogs) => {
+        if(err){
+          return res.status(404).json({
+            message: 'Dialogs not found'
+          })
+        }
+        return res.json(dialogs)
+      })
   }
 
   delete(req: express.Request, res: express.Response){

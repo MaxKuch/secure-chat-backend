@@ -18,7 +18,6 @@ export default (token: string): Promise<DecodedData | null> =>
           if (err || !decodedData) {
             return reject(err);
           }
-
           resolve(decodedData as DecodedData);
         }
       );

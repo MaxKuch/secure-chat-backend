@@ -6,6 +6,7 @@ import cors from 'cors'
 import { UserController, DialogController, MessagesController} from '../controller'
 import { checkAuth } from '../middlewares'
 import { loginValidation, registrationValidation } from '../utils/validations'
+
 dotenv.config()
 
 export default (app: express.Express, io: socket.Server) => {
@@ -14,15 +15,12 @@ export default (app: express.Express, io: socket.Server) => {
   const Dialog = new DialogController(io)
   const Messages = new MessagesController(io)
 
-  
-
-  var corsOptions = {
-    origin: process.env.ORIGIN,
+  const corsOptions = {
+    origin: process.env.ORIGIN_DEV,
     credentials: true
   }
 
   app.use(cors(corsOptions), bodyParser.json(), checkAuth)
- 
 
   app.get('/user/me', User.getMe);
   app.get('/user/find', User.find);

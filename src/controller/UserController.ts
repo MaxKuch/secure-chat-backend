@@ -57,8 +57,6 @@ class UserController extends Controller{
     else res.json({status: 'error', message: 'Вы не авторизованы'})
   }
 
-  
-
   login = (req: express.Request, res: express.Response) => {
     const postData = {
       email: req.body.email,
@@ -76,7 +74,7 @@ class UserController extends Controller{
           message: 'incorrect password or email'
         })
         
-      }else if (bcrypt.compareSync(postData.password, user.password)){
+      } else if (bcrypt.compareSync(postData.password, user.password)){
         const token = createJWTToken(postData)
         this.io.emit('USER_CONNECTED', user._id)
         res.json({
@@ -111,6 +109,7 @@ class UserController extends Controller{
   create(req: express.Request, res: express.Response) {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
+    
     const postData = {
       email: req.body.email,
       fullname: req.body.name,

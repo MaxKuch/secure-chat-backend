@@ -24,8 +24,6 @@ const MessageSchema = new Schema(
       required: true,
       ref: "Dialog"
     },
-    //attachments:,
-    //audio:,
     isReaded: {
       type: Boolean,
       default: false

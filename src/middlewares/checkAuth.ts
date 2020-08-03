@@ -10,8 +10,7 @@ export default (
 ): void => {
   if (
     req.path === "/user/login" ||
-    req.path === "/user/registration" ||
-    req.path === "/user/verify"
+    req.path === "/user/registration"
   ) {
     return next();
   }

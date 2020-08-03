@@ -7,9 +7,9 @@ class MessagesController extends Controller{
   constructor(io: socket.Server){
     super(io)
   }
+
   index = (req: any, res: express.Response) => {
     const dialogId:string = req.params.id
-    
     MessageModel.find({dialog: dialogId}).populate(["dialog", "user"]).exec((err, dialogs) => {
       if(err){
         return res.status(404).json({

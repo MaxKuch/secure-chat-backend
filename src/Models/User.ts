@@ -50,10 +50,6 @@ UserSchema.set("toJSON", {
   virtuals: true,
 });
 
-// UserSchema.post("update", {
-  
-// });
-
  const UserModel = mongoose.model<IUser>("User", UserSchema)
 
  export default UserModel

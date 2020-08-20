@@ -1,6 +1,6 @@
 **Backend:**
 
-React Chat App - [Demo](https://whispering-dawn-05999.herokuapp.com/)
+React Chat App - [Demo](https://react-chat-application0.herokuapp.com/)
 
 **Инструкция:**
 

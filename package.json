@@ -8,7 +8,7 @@
     "dev": "node --inspect=3003 -r ts-node/register ./src/index.ts",
     "watch": "nodemon",
     "deploy": "git add . && git commit -m Heroku && git push heroku master",
-    "postinstall": "tsc && mv -i -v ./static dist/"
+    "postinstall": "tsc && mv -i -v ./static dist/  && rm -v -rf src"
   },
   "author": "",
   "license": "ISC",

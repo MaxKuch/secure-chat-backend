@@ -5,21 +5,25 @@ export interface DecodedData {
   data: IUser;
 }
 
-export default (token: string): Promise<DecodedData | null> =>
+export default (token: string | string[] | undefined): Promise<DecodedData | null> =>
   new Promise(
     (
       resolve: (decodedData: DecodedData) => void,
       reject: (err: VerifyErrors) => void
     ) => {
-      jwt.verify(
-        token,
-        process.env.JWT_SECRET || "",
-        (err: any, decodedData) => {
-          if (err || !decodedData) {
-            return reject(err);
-          }
+      if(token === undefined)
+        token = ''
+      if(token instanceof Array)
+        token = token[0]
+      try {
+        const decodedData = jwt.verify(
+            token,
+            process.env.JWT_SECRET || ""
+          );
           resolve(decodedData as DecodedData);
-        }
-      );
+      }
+      catch(err) {
+        reject(err as VerifyErrors)
+      }
     }
   );

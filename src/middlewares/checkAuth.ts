@@ -29,11 +29,10 @@ export default (
             next();
           });
         }
-
       })
       .catch(() => {
         res.status(403).json({ message: "Invalid auth token provided." });
-      });
+      })
   }
   else{
     next()

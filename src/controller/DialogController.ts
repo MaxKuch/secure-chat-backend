@@ -1,7 +1,7 @@
 import express from 'express'
 import socket from 'socket.io'
 import Controller from './Controller'
-import { DialogModel, MessageModel } from '../Models'
+import { DialogModel, UserModel } from '../Models'
 
 
 class DialogController extends Controller{
@@ -42,25 +42,19 @@ class DialogController extends Controller{
       author: req.user._id,
       partner: req.body.partner,
     }
-    const dialog = new DialogModel(postData)
-    dialog.save((err, dialog) => {
-      if (err) return res.json(err);
-      const message = new MessageModel({
-        text: req.body.text,
-        dialog: dialog._id,
-        user: postData.author
-      })
-      message.save((err, message) => {
+    UserModel.findOne({_id: postData.partner }, (_, user) => {
+      if(!user?.isOnline) res.status(400).json({message: 'Пользователь оффлайн'})
+      const dialog = new DialogModel(postData)
+      dialog.save((err, dialog) => {
         if (err) return res.json(err);
         
-        message.populate("user").execPopulate().then((message) => {
-          dialog.populate("partner").populate("author").execPopulate().then((dialog:any) => {
-            this.io.emit('SERVER:DIALOG_CREATED', {...dialog._doc, unreaded: 1, lastMessage: message})
-            res.json({...dialog._doc, unreaded: 1, lastMessage: message})
-          })
+        dialog.populate("partner").populate("author").execPopulate().then((dialog:any) => {
+          this.io.emit('SERVER:DIALOG_CREATED', {dialog: {...dialog._doc, unreaded: 0, lastMessage: null}, DiffieHallmanData: req.body.DiffieHallmanData})
+          res.end()
         })
       })
     })
+    
   }
 }
 

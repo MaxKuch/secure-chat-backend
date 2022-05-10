@@ -14,12 +14,44 @@ class UserController extends Controller{
 
   find(req: any, res: any){
     const userId: string | null = req.user._id
-    const query: string = req.query.query;
-    UserModel.find({ _id: { $not: { $eq: userId } } } )
-      .or([
-        { fullname: new RegExp(query, "i") },
-        { email: new RegExp(query, "i") },
-      ])
+    const query: string = req.query.query
+    const isOnline: boolean = req.query.online
+
+    const conditinObj: {
+      $and: ({
+          _id: {
+              $not: {
+                  $eq: string | null;
+              };
+          };
+          $or?: undefined;
+      } | {
+          $or: ({
+              fullname: RegExp;
+              email?: undefined;
+          } | {
+              email: RegExp;
+              fullname?: undefined;
+          })[];
+          _id?: undefined;
+      } | {
+        isOnline: {
+          $eq: boolean;
+        }
+      })[];
+    } = {
+      $and: [
+        { _id: { $not: { $eq: userId } } }, 
+        { $or: [
+          { fullname: new RegExp(query, "i") },
+          { email: new RegExp(query, "i") },
+        ]}
+      ]
+    }
+    if(isOnline !== undefined) {
+      conditinObj.$and.push({ isOnline: { $eq: isOnline }  })
+    }
+    UserModel.find(conditinObj)
       .then((users: IUser[]) => res.json(users))
       .catch((err: any) => {
         return res.status(404).json({

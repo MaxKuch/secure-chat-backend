@@ -34,12 +34,17 @@ class MessagesController extends Controller{
     })
   }
 
-  create = (req: any, res: express.Response) => {
+  create = async (req: any, res: express.Response) => {
     const userId = req.user._id
     const postData = {
       text: req.body.text,
       user: userId,
       dialog: req.body.dialog
+    }
+    const isDialogExists = await DialogModel.exists({_id: postData.dialog })
+    if(!isDialogExists) {
+      res.status(400).json({message: 'Данный диалог больше не существует'})
+      return
     }
     const message = new MessageModel(postData)
     message.save((err: any, message) => {

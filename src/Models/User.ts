@@ -8,6 +8,7 @@ export interface IUser extends Document {
   fullname:  string;
   password:  string;
   confirmed:  boolean;
+  isOnline: boolean;
   last_seen:  Date;
 }
 

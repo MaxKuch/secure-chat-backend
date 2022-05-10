@@ -17,7 +17,7 @@ const corsOptions = {
   credentials: true
 }
 
-app.use(cors(corsOptions), express.json(), checkAuth, express.static(path.join(__dirname, '../static')))
+app.use(cors(corsOptions), express.json(), checkAuth, express.static(path.join(__dirname, 'static')))
 
 const server = http.createServer(app);
 const io = createSocket(server)

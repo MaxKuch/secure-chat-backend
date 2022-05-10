@@ -9,7 +9,7 @@
     "watch": "nodemon",
     "build": "tsc && mv -i -v static dist/",
     "deploy": "git add . && git commit -m Heroku && git push heroku master",
-    "postinstall": "tsc && mv -i -v static dist/ && rm -v -rf src"
+    "postinstall": "tsc && mv -i -v static dist/"
   },
   "author": "",
   "license": "ISC",
